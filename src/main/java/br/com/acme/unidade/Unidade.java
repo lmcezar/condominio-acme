@@ -4,35 +4,32 @@
 package br.com.acme.unidade;
 
 import java.io.Serializable;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import br.com.acme.multas.Multa;
-import br.com.acme.responsavel.Responsavel;
-import lombok.Builder;
+import br.com.acme.condominio.Condominio;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * @author carlosfilho
+ * @author lucas
  *
  */
 @Entity
 @Getter
 @Setter
-@Builder
+@NoArgsConstructor
 @EqualsAndHashCode
-@Table(name = "tb_responsavel")
+@Table(name = "tb_unidade")
 public class Unidade implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -40,15 +37,12 @@ public class Unidade implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name = "id_responsavel")
-	private Responsavel responsavelUnidade;
-	
 	private String numeroUnidade;
 	
 	private String blocoUnidade;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "unidadeMulta")
-	private Set<Multa> multasUnidade;
+	@ManyToOne
+    @JoinColumn(name="condominio_id")
+	private Condominio condominio;
 	
 }

@@ -8,17 +8,17 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import br.com.acme.aviso.Aviso;
-import br.com.acme.multas.Multa;
-import lombok.Builder;
+import br.com.acme.unidade.Unidade;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -28,8 +28,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Builder
 @EqualsAndHashCode
+@NoArgsConstructor
 @Table(name = "tb_condominio")
 public class Condominio implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -44,10 +44,13 @@ public class Condominio implements Serializable {
 	
 	private String telefone;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "condominoMulta")
-	private Set<Multa> multasAplicadas;
+	/*@OneToMany(cascade = CascadeType.ALL, mappedBy = "condominoMulta")
+	private Set<Multa> multasAplicadas;*/
 	
-	@OneToMany
-	private Set<Aviso> avisos;
+	/*@OneToMany
+	private Set<Aviso> avisos;*/
+	
+	/*@OneToMany(cascade = CascadeType.ALL, mappedBy = "condominio")
+	private Set<Unidade> unidades;*/
 	
 }

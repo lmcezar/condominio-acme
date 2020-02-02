@@ -44,11 +44,11 @@ public class Reserva implements Serializable {
 	
 	private LocalDateTime fimReserva;
 	
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name = "id_responsavel")
 	private Responsavel responsavelReserva;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_area_comum")
-	private AreaComum areaComumReservada;
+	private AreaComum areaComumReservada;*/
 }

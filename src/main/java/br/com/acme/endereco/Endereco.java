@@ -43,7 +43,7 @@ public class Endereco implements Serializable {
 	
 	private String cep;
 	
-	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+	/*@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "id_condominio")
-	private Condominio condominioEndereco;
+	private Condominio condominioEndereco;*/
 }

@@ -41,7 +41,7 @@ public class Reclamacao  implements Serializable{
 	
 	private LocalDate dataReclamacao;
 	
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name = "id_responsavel")
-	private Responsavel responsavelReclamacao;
+	private Responsavel responsavelReclamacao;*/
 }

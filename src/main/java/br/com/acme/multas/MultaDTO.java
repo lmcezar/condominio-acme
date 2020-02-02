@@ -26,32 +26,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- * @author carlosfilho
- *
- */
-@Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@EqualsAndHashCode
-@Table(name = "tb_multas")
-public class Multa implements Serializable {
-	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+public class MultaDTO {
+	
 	private Long id;
 	
 	private String descricaoMulta;
 	
-	@JsonFormat(pattern="dd-MM-yyyy")
 	private LocalDate dataMulta;
-	
-	
-	@ManyToOne
-    @JoinColumn(name="unidade_id")
-	private Unidade unidade;
 	
 	private BigDecimal valorMulta;
 }

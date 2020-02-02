@@ -19,6 +19,7 @@ import br.com.acme.reserva.Reserva;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -28,8 +29,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Builder
 @EqualsAndHashCode
+@NoArgsConstructor
 @Table(name = "tb_responsavel")
 public class Responsavel implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -44,9 +45,9 @@ public class Responsavel implements Serializable {
 	
 	private String telefone;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "responsavelReserva")
+	/*@OneToMany(cascade = CascadeType.ALL, mappedBy = "responsavelReserva")
 	private Set<Reserva> reservas;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "responsavelReclamacao")
-	private Set<Reclamacao> reclamacoes;
+	private Set<Reclamacao> reclamacoes;*/
 }
